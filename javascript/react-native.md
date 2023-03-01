@@ -133,3 +133,15 @@ const testScreen = ({ route, navigation }) => {
   )
 }
 ```
+
+## APK 파일 추출
+1. assets 폴더 생성
+   - `android/app/src/main/assets` 폴더가 있는지 확인하고, 없으면 새로 만든다
+
+2. bundle 파일 생성
+   - `npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/`
+
+3. `npm run android` 실행
+
+4. apk 파일 생성 완료
+   - `android/app/build/outputs/apk/debug` 경로에 `app-debug.apk`이 생성된다
