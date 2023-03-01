@@ -29,7 +29,7 @@ sudo apt -y install fonts-unfonts-core fonts-unfonts-extra fonts-nanum fonts-nan
 ### 패키지 설치
 
 * apt: 데비안 계열의 패키지 매니저 이름
-* wget, curl: 자동설치스크립트. wget가 좀더 직관적이다.
+* wget, curl: 자동설치스크립트. wget이 좀더 직관적이다.
 
 ## nano
 
