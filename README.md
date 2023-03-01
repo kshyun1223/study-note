@@ -50,7 +50,6 @@
 - [Nest.js](./javascript/nestjs.md)
 
 ### 네이티브 앱
-- [React Native 설치](./javascript/react-native-setup.md)
 - [React Native](./javascript/react-native.md)
 
 ## 파이썬
