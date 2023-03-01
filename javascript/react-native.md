@@ -119,3 +119,17 @@
 - useRoute: Screen으로 사용되고 있지 않은 컴포넌트에서도 route 객체를 사용할 수 있게 하는 함수
 - useFocusEffect: useFocusEffect는 화면에 포커스가 잡혔을 때 특정 작업을 할 수 있게 하는 함수
   - 예를 들어 HomeScreen에서 DetailScreen을 띄운다면 HomeScreen이 화면에서 사라지는 게 아니라, HomeScreen 위에 DetailScreen을 쌓아서 보여주는 것이다
+
+### route params
+- navigation.navigate() 메서드의 두 번째 인자로 값을 전달할 수 있다
+  - `navigation.navigate("경로", "params")`
+
+- 받을 때는 route 객체를 통해서 받는다
+```javascript
+const testScreen = ({ route, navigation }) => {
+  const { param1, param2 } = route.params
+  return (
+    {...}
+  )
+}
+```
