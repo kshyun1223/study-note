@@ -14,9 +14,9 @@
 - [Mongoose](./database/mongoose.md)
 
 ## 인프라
-### tool
-- [도커](./infrastructure/docker.md)
+### 도구
 - [git](./infrastructure/git.md)
+- [도커](./infrastructure/docker.md)
 
 ### 운영체제
 - [리눅스](./infrastructure/linux.md)
@@ -24,11 +24,10 @@
 - [WSL](./infrastructure/wsl.md)
 
 ## 자바스크립트
-### 문법
-- [기본 문법](./javascript/syntax.md)
+### 자바스크립트
+- [자바스크립트 기본 문법](./javascript/syntax.md)
 - [배열 관련 표준함수](./javascript/array.md)
-- [생성자함수](./javascript/constructor-function.md)
-- [비동기 문법](./javascript/async.md)
+- [비동기 처리](./javascript/async.md)
 - [ES6 및 기타 주요개념](./javascript/es6.md)
 
 ### 웹 브라우저
@@ -56,11 +55,9 @@
 
 ## 파이썬
 ### 파이썬
-- [기본 문법](./python/python.md)
+- [파이썬 기본 문법](./python/python.md)
 - [Venv와 Pip](./python/venv-pip.md)
 
-### 플라스크
+### 서버
 - [Flask](./python/flask.md)
-
-### 장고
 - [Django](./python/django.md)
