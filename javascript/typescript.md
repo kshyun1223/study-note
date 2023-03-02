@@ -1,8 +1,9 @@
 # Typescript
 ## 개발환경 구축
 ### 기본 구성요소
-- typescript
-- ts-node
+- 타입스크립트는 개발 단계에서만 사용되기 때문에 devDependencies로 설치한다
+  - typescript
+  - ts-node
 
 ### 프로젝트 생성
 1. `tsc --init` 플래그 실행
