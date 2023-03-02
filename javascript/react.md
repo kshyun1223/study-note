@@ -6,47 +6,103 @@
 
 ### devDependencies
 - babel 관련
- - @babel/cli
- - @babel/core
- - @babel/preset-env
- - @babel/preset-react
- - babel-loader
+  - @babel/cli
+  - @babel/core
+  - @babel/preset-env
+  - @babel/preset-react
+  - babel-loader
 
-- webpack 관련 
- - webpack
- - webpack-cli
- - webpack-dev-server
- - html-webpack-plugin
+- webpack 관련
+  - webpack
+  - webpack-cli
+  - webpack-dev-server
+  - html-webpack-plugin
 
-- 타입스크립트 관련 
- - @types/react
- - @types/react-dom
+- 타입스크립트 관련
+  - @types/react
+  - @types/react-dom
 
-
-
-
-## Props
-
-### Props 객체 구조 분해 할당
-
-```javascript
-const object = {
-a: 1,
-b: 2,
-c: 3
-};
-const {a, b, c} = object;
+### 폴더 구조
+```
+./
+└─src
+    App.tsx
+    index.tsx
+babel.config.js
+index.html
+webpack.config.js
 ```
 
-### useState Hook으로 상태 관리하기
+### babel.config.js
+```javascript
+module.exports = {
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-react',
+  ],
+};
+```
 
-* Hooks
-  * 리액트에는 use로 시작하는 빌트인 함수가 많은데 이 함수들을 Hook이라고 부른다
-  * 상태관리 뿐만아니라 다양한 기능이 있다
-* 사용자와의 상호작용으로 UI를 변화시키려면 상태를 기준으로 해야 한다
-  * 상태를 관리하는 방법은 useState 함수를 사용하는 것이다
-  * useState는 불리언을 비롯하여 숫자, 객체, 배열 등 형태로 상태를 정의할 수 있다
-* 상태관리 예시
-  * Button 컴포넌트를 불러와서 on off 기능을 구현
-  * 조건부 렌더링 기능: 특정 조건에 따라 다른 결과물을 보여주는 것
-  * 변수와 증감연산자를 사용해서 카운터 구현하기
+### webpack.config.js
+```javascript
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+
+module.exports = {
+  entry: `${path.resolve(__dirname, './src')}/index.tsx`,
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html', // 번들링 결과물을 주입할 html 파일
+    }),
+    new webpack.ProvidePlugin({
+      React: 'react', // 웹팩에 리액트를 적용
+    }),
+  ],
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  devServer: { // webpack-dev-server 옵션
+    static: path.resolve(__dirname, 'dist'),
+    historyApiFallback: true, // 404 페이지 대신 index.html로 이동
+    hot: true, // 모듈 전체를 다시 로드하지 않고 변경된 사항만 갱신
+  },
+  resolve: { // import 할 때 생략할 확장자
+    extensions: ['.jsx', '.js','.ts','.tsx'],
+  },
+}
+```
+
+### index.html
+```html
+<!-- {...} -->
+<body>
+  <div id="root"></div>
+</body>
+<!-- {...} -->
+```
+
+### ./src/index.tsx
+```javascript
+import { createRoot } from 'react-dom/client'
+import React from 'react'
+import App from './App'
+
+const rootNode = document.getElementById('root')
+const root = createRoot(rootNode)
+root.render (
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+```
