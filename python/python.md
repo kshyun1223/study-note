@@ -138,18 +138,18 @@ user_pwd = input('Please enter your Password')
 
 #조건문
 if user_pwd == '111111':
-    print('Hello master')
+  print('Hello master')
 else:
-    print('Who are you?')
+  print('Who are you?')
 
 #중첩 조건문
 if user_id == 'egoing':
-    if user_pwd == '111111':
-        print('Hello master')
-    else:
-        print('Who are you?')
-else:
+  if user_pwd == '111111':
+    print('Hello master')
+  else:
     print('Who are you?')
+else:
+  print('Who are you?')
 ```
 
 ### 배열
@@ -175,21 +175,21 @@ print(squars) #[1, 4, 16, 25, 'egoing']
 ```python
 #list 
 for value in ['a','b','c'] #value 변수에 a, b, c를 차례대로 대입한다
-    print(value) #a b c
+  print(value) #a b c
 
 #range
 for value in range(10) #value 변수에 0~10을 차례대로 대입한다
-    print(value) #0 1 2 3 4 5 6 7 8 9 10
+  print(value) #0 1 2 3 4 5 6 7 8 9 10
 ```
 
 ### 함수
 
 ```python
 def average(a,b,c): #average 함수를 생성
-    s=a+b+c
-    r=s/3
-    print(r)
-    return r
+  s=a+b+c
+  r=s/3
+  print(r)
+  return r
 
 print(average(10,20,30)) #20
 ```
@@ -199,12 +199,12 @@ print(average(10,20,30)) #20
 ```python
 #math 모듈 생성: math.py 파일을 생성하고 함수 작성
 def average(a,b,c):
-    s=a+b+c
-    r=s/3
-    return r
+  s=a+b+c
+  r=s/3
+  return r
  
 def plus(a,b):
-    return a+b
+  return a+b
  
 pi = 3.14
 
@@ -222,54 +222,28 @@ print(plus(1,2))
 print(pi)
 ```
 
-## SQL
-
+## pymysql
 ### 연결
-
-> 아마도 내장 모듈은 없는 것 같다. pymysql이 제일 나은듯.
-
-1. `connection.connect()`: 파이썬을 db서버에 접속시키는 메소드
-2. `cursor.cursor()` : fetch 동작을 관리하는 cursor 객체를 호출
+```python
+conn = pymysql.connect(
+user = '계정명',
+passwd = '패스워드',
+host = '엔드포인트',
+db = '데이터베이스 이름',
+charset = 'utf8'
+)
+```
 
 ### 실행
-
-1. `cursor.execute()` : db서버에 쿼리문을 전달
-2. fetch 메소드 : db서버로부터 데이터를 받아온다
-   * `cursor.fetchall()`
-   * `cursor.fetchone()`
-   * `cursor.fetchmany()`
-3. `connection.commit()` : db서버에 현재 트랜잭션을 커밋하라는 명령을 전달
-4. `connection.rollback()` : db서버에 현재 트랜잭션을 롤백하라는 명령을 전달
-   * 기본적으로 파이썬 커넥터는 자동으로 커밋되지 않기 때문에 InnoDB 같은 트랜잭션 저장 엔진에서 트랜잭션을 취소할 수 있다
-
-### cursor.executemany()
-
-* 요청
-
 ```python
-data = [
-  ('Jane', date(2005, 2, 12)),
-  ('Joe', date(2006, 5, 23)),
-  ('John', date(2010, 10, 3)),
-]
-stmt = "INSERT INTO employees (first_name, hire_date) VALUES (%s, %s)"
-cursor.executemany(stmt, data)
-```
+def sql_test():
+  try:
+    curs = conn.cursor(pymysql.cursors.DictCursor) # 커서 연결
+    cursor.execute(""" SQL 쿼리 """) # 쿼리문 전송
+    row = cursor.fetchall() # 응답 수신
+    return row
 
-* 결과
-
+	finally:
+		curs.close()
 ```
-INSERT INTO employees (first_name, hire_date)
-VALUES ('Jane', '2005-02-12'), ('Joe', '2006-05-23'), ('John', '2010-10-03')
-```
-
-* 이게 더 나은가...
-
-```python
-data = [
-    ("Monty Python Live at the Hollywood Bowl", 1982, 7.9),
-    ("Monty Python's The Meaning of Life", 1983, 7.5),
-    ("Monty Python's Life of Brian", 1979, 8.0),
-]
-cur.executemany("INSERT INTO movie VALUES(?, ?, ?)", data)
-```
+- pymysql.cursors.DictCursor : 데이터를 딕셔너리 형태로 반환하는 옵션
