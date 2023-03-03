@@ -35,13 +35,15 @@
 - [HTML / CSS](./javascript/html-css.md)
 - [SCSS](./javascript/scss.md)
 - [DOM](./javascript/dom.md)
-- [웹팩](./javascript/webpack.md)
 
-### 타입스크립트 
+### 타입스크립트
 - [타입스크립트](./javascript/typescript.md)
 
 ### SPA
 - [React](./javascript/react.md)
+
+### SSR
+- [Next.js](https://github.com/kshyun1223/practice-hello-next/blob/master/readme.md)
 
 ### 서버
 - [Node.js](./javascript/nodejs.md)
