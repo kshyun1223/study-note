@@ -6,6 +6,7 @@
 ## 데이터베이스
 ### RDBMS
 - [SQL 문법](./database/syntax.md)
+- [Mysql/MariaDB CLI](./database/mysql-cli.md)
 - [인덱스](./database/index.md)
 - [모델링](./database/modeling.md)
 
