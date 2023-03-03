@@ -32,8 +32,9 @@
 
 ### 타입
 
-* 자바스크립트가 지원하는 타입 : Boolean, Null, Undefined, Number, **BigInt**, String, **Symbol**, Object
-* 타입스크립트가 지원하는 타입 : Boolean, Null, Undefined, Number, String, Object, **Array, Tuple, Enum, Any, Void, Never**
+- 자바스크립트와 타입스크립트가 공통으로 지원하는 타입 : Boolean, Null, Undefined, Number, String, Object
+  - 자바스크립트만 지원하는 타입 : **BigInt**, **Symbol**
+  - 타입스크립트만 지원하는 타입 : **Array, Tuple, Enum, Any, Void, Never**
 
 ### 함수
 - 리턴이 있는 경우 매개변수 오른쪽에 리턴의 타입을 지정한다
