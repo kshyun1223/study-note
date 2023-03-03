@@ -244,6 +244,6 @@ def sql_test():
     return row
 
 	finally:
-		curs.close()
+		curs.close() # 커서 종료
 ```
 - pymysql.cursors.DictCursor : 데이터를 딕셔너리 형태로 반환하는 옵션
