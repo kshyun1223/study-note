@@ -30,6 +30,7 @@
 - [배열 관련 표준함수](./javascript/array.md)
 - [비동기 처리](./javascript/async.md)
 - [ES6 및 기타 주요개념](./javascript/es6.md)
+- [코테 대비 총정리](./javascript/coding-test.md)
 
 ### 웹 브라우저
 - [렌더링](./javascript/rendering.md)
