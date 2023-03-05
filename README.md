@@ -1,7 +1,6 @@
 # study note
-## 자료구조와 알고리즘
-### 자료구조
-- [자료구조](./data-structure/data-structure.md)
+## 알고리즘
+- [알고리즘](./algorithm/algorithm.md)
 
 ## 데이터베이스
 ### RDBMS
