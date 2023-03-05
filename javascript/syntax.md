@@ -65,7 +65,7 @@ object.keyOne; // valueOne
 ### for문
 
 ```javascript
-for(let i = 1; i < x; i++) { // x=반복 조건
+for(let i = 0; i < x; i++) { // x=반복 조건
   /* 반복하여 실행할 내용 */
 }
 ```
@@ -212,16 +212,21 @@ countdown(10);
 * 재귀호출(recursive)을 수행하는 함수이다
 * 반복문을 대체하는 용도로 사용할 수 있다
 
-### 즉시실행함수
-
+### 즉시실행함수(IIFE)
 ```javascript
-(function () {
-  let a = 3;
-  let b = 5; 
-  return a * b;
+const normal = (function () {
+ console.log("IIFE")
 }());
+
+normal // "IIFE"
 ```
 
-* 브라우저 컴파일러에 함수가 로드된 후 직접 호출되는 함수이다
-* 함수 전체를 소괄호로 감싸는 방식으로 작성한다
-* 단 한번만 호출되며 다시 호출할 수 없다
+```javascript
+const arrow = (() => {
+ console.log("IIFE")
+})();
+
+arrow // "IIFE"
+```
+- IIFE 표현식 내부의 변수는 외부에서 접근이 불가능하다
+- IIFE를 변수에 할당하면 IIFE 자체는 저장되지 않고, 함수가 실행된 결과만 저장된다
