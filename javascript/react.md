@@ -18,6 +18,10 @@
   - webpack-dev-server
   - html-webpack-plugin
 
+- webpack + css 관련
+  - css-loader
+  - style-loader
+
 - 타입스크립트 관련
   - @types/react
   - @types/react-dom
@@ -59,9 +63,13 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx)?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(css)$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
