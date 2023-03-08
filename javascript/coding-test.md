@@ -1,13 +1,6 @@
 # 코테 대비 총정리
 
 ## 기본 문법
-
-### 즉시실행함수
-
-```javascript
-const identifier = ((param) => 'execute')(arg)
-```
-
 ### for문
 
 ```javascript
