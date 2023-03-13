@@ -1,6 +1,7 @@
 # study note
 ## 알고리즘
 - [알고리즘](./algorithm/algorithm.md)
+- [자료구조](./algorithm/datastructure.md)
 
 ## 데이터베이스
 ### RDBMS
