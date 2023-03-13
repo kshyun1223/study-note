@@ -14,7 +14,8 @@
     "module": "commonjs", // 결과물의 모듈 방식
     "target": "es2016", // 결과물의 버전
     "outDir": "dist", // 결과물을 내보낼 위치
-    "esModuleInterop":true // CommonJS 모듈을 ES6 방식으로 import
+    "esModuleInterop":true // CommonJS 모듈을 ES6 방식으로 Import 한다
+    "resolveJsonModule":true // JSON 파일을 Import 한다
   },
   "include": ["src/**/*"], // 포함할 대상
 }
