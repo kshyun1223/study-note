@@ -23,7 +23,17 @@
 
 ### tsc-watch
 - nodemon과 마찬가지로 코드의 변경이 감지되면 자동으로 앱을 재시작 해주는 도구
+- Webpack-dev-server를 사용하지 않는 백엔드 개발환경에서 유용하게 사용할 수 있다
 - npm start 설정: `"tsc-watch --onSuccess \"node dist/index.js\""`
+
+### global.d.ts
+- 전역 타입을 선언하는 파일이다
+- 프로젝트의 엔트리 파일과 같은 경로에 생성하면 된다
+- 타입스크립트에서 정적 파일을 불러올 때도 여기에 선언을 해야 한다
+  ```javascript 
+  declare module "*.png"
+  ```
+
 
 ## 사용법
 ### 타입스크립트의 특징
