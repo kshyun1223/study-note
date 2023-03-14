@@ -12,13 +12,13 @@
   - @babel/preset-react
   - babel-loader
 
-- webpack 관련
+- webpack - 필수 구성요소
   - webpack
   - webpack-cli
   - webpack-dev-server
   - html-webpack-plugin
 
-- webpack + css 관련
+- webpack - css 관련
   - css-loader
   - style-loader
 
@@ -29,12 +29,15 @@
 ### 폴더 구조
 ```
 ./
+│  babel.config.js
+│  webpack.config.js
+│
+├─public
+│     index.html
+│          
 └─src
-    App.tsx
-    index.tsx
-babel.config.js
-index.html
-webpack.config.js
+      App.tsx
+      index.tsx
 ```
 
 ### babel.config.js
